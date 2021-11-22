@@ -1,0 +1,264 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #9b59b6;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.main {
+	border-radius: 10px;
+	border: 1px solid gray;
+	box-shadow: 1px 2px 15px 1px gray;
+	overflow: hidden;
+	width: 60vw;
+	max-width: 100vw;
+	min-width: 75vw;
+	margin: 10vh 0 10vh 0;
+}
+
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: none;
+	padding: 20px 40px;
+}
+
+.header img{
+	height: 4.5rem;
+	width: 12.5rem;
+	text-align: center;
+}
+
+.header h2 {
+	margin: 2vh 0 3vh 0 ;
+}
+
+.header p{
+	margin-bottom: 0;
+}
+
+.form {
+	padding: 30px 30px;	
+}
+
+.form_control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form_control label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form_control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 8px;
+	width: 100%;
+	background: none;
+}
+
+.form__lable{
+	transition: top 200ms ease-in,
+		left 200ms ease-in;
+		font-size: 200ms ease-in;
+	background-color: #fff;
+}
+
+.form_control input:not(:focus)+ .form__lable{
+	top: -0.8rem;
+	left: 0.8rem;
+	color: blue;
+}
+
+.form_control input:focus {
+	border-color: blue;
+}
+
+.form_control.success input {
+	border-color: #2ecc71;
+}
+
+.form_control.error input {
+	border-color: #e74c3c;
+}
+
+.form_control i {
+	visibility: hidden;
+	position: absolute;
+	top: 41px;
+	right: 10px;
+}
+
+.form_control .ex i{
+	visibility: hidden;
+	position: absolute;
+	font-size: 15px;
+	color: #e74c3c;
+	top: 77px;
+	left: 0px;
+}
+
+.form_control p {
+	position: absolute;
+	top: 38px;
+	right: 10px;
+}
+
+.form_control .war p{
+	position: absolute;
+	top: 80px;
+	left: 0;
+}
+
+.form_control.error .war p{
+	position: absolute;
+	top: 94px;
+	left: 0;
+}
+
+
+.form_control.success .war p{
+	position: absolute;
+	top: 80px;
+	left: 0;
+}
+
+.form_control.success i.fa-check {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.username{
+	margin: 0 14px 2.5rem 14px;
+}
+
+.form_control.error .ex i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+
+.form_control.success p{
+	position: absolute;
+	top: 38px;
+	right: 35px;
+}
+
+.note p{
+	margin-top: -5px;
+}
+
+.form_control small {
+	color: #e74c3c;
+	position: absolute;
+	top: 75px;
+	left: 20px;
+	visibility: hidden;
+}
+
+.form_control.error small {
+	visibility: visible;
+}
+
+.form_control.error div {
+	visibility: visible;
+}
+
+.flex{
+	display: inline-flex;
+}
+
+center a{
+	margin-right: 70%;
+	padding: 10px;
+}
+
+.btn:hover{
+	border: none;
+	background-color: #043d7e; 
+	box-shadow: 1px 2px 2px;
+	border-radius: 5px;
+}
+
+center a:hover{
+	text-decoration: none;
+	background-color: #9fc3e488; 
+	padding: 10px;
+}
+
+.names, .passwords{
+	display: inline-flex;
+}
+
+.names .form_control{
+	width: 50%;
+}
+
+.passwords .form_control{
+	width: 50%;
+}
+
+.ex-mr{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.war{
+	font-size: .9rem;
+}
+
+@media(max-width: 750px){
+	.main{
+		width: 100vw;
+		margin:0;
+		max-width: 100%;
+	}
+
+	.header img{
+		height: 3rem;
+		width: 9.5rem;
+		text-align: center;
+	}
+}
+
+@media(max-width: 370px){
+	.names{
+		flex-direction: column;
+	}
+
+	.names .form_control{
+		width: 100%;
+	}
+
+	.passwords{
+		flex-direction: column;
+	}
+
+	.passwords .form_control{
+		width: 100%;
+	}
+
+	.ex-mr{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
+@media(max-width: 9000px){
+	center a{
+		margin-right: 50%;
+	}
+}

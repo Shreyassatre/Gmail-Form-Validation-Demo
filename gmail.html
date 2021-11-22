@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home page</title>
+    <link rel="stylesheet" href="gmail.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light border-bottom">
+            <a class="navbar-brand" href="#">
+                <img src="images/gmail_logo.png" width="40" height="30" class="d-inline-block align-top mt-2" alt="" loading="lazy">
+                <span>Gmail</span>
+            </a>
+            <span><a href="https://play.google.com/store/apps/details?id=com.google.android.gm&referrer=utm_source%3Dweb_about_hero" class="get_gmail_btn">Get Gmail</a></span>
+        </nav>
+    </header>
+
+    <div class="container col-12 row mt-4 d-flex justify-content-between">
+        <div class="col-12 col-lg-6 col-md-6">
+            <div class="content">
+                <h1>Get more done with Gmail</h1>
+                <p>Now more secure, smarter and easier to use—helping you save time and do more with your inbox.</p>
+            </div>
+            <div class="mb-sm-3 mt-5">
+                <a href="https://gmail.com" class="gmail_btn">Open Gmail</a>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-md-6">
+            <img class="responsive-image" id="pic">
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light pt-4 pb-4 mt-5">
+        <h1 class="text-center">Experience Gmail on any device</h1>
+        <p class="text-center mt-4" >The ease & simplicity of Gmail, wherever you are.</p>
+        <div class="text-center mt-5">
+            <input type="image" id="ps" src="images/playstore.png">
+            <input type="image" id="ps" src="images/apple.png">
+        </div>
+    </div>
+
+        <img src="images/img5.png" class="img-fluid mt-5" >     
+
+    <div class="container text-center mt-5 bg-light p-5">
+        <h1>Stay organised instantly</h1>
+        <p class="mt-4">See what’s new at a glance and decide what you want to read and respond to.</p>
+        <img src="images/device1.png" class="img-fluid" alt="">
+    </div>
+
+    <div class="container text-center mt-5 bg-light p-5">
+        <h1>Never drop the ball</h1>
+        <p class="mt-4">Get nudges that remind you to follow up and respond to messages, so that nothing slips through the cracks.</p>
+        <img src="images/device2.png" class="img-fluid" alt="">
+    </div>
+
+    <div class="container text-center mt-5 p-5">
+        <h1>Take action right from the inbox</h1>
+        <p class="mt-4">View attachments, RSVP to events, snooze messages and more without opening any emails.</p>
+        <img src="images/device3.png" class="img-fluid" alt="">
+    </div>
+
+    <div class="container-fluid text-center bg-light p-5">
+        <h1>Avoid suspicious emails</h1>
+        <p class="mt-4">Gmail blocks 99.9% of dangerous emails before they reach you. If we think something seems phish-y, you’ll get a warning.</p>
+        <img src="images/device4.png" class="img-fluid" alt="">
+    </div>
+
+    <div class="container text-center mt-5">
+        <img src="images/gmail_logo.png" class="logo2" alt="">
+        <h2 class="mt-3">Get started with Gmail</h2>
+        <div class="text-center m-5">
+            <a href="https://gmail.com" class="gmail_btn_2">Open Gmail</a>
+        </div>
+    </div>
+
+
+    <script>
+        var i,imgs,pic;
+
+        function change(){
+            pic=document.getElementById("pic");
+            imgs=["images/img3.png", "images/img1.png", "images/img4.png"];
+            i=0;
+            loop();
+        }
+        function loop(){
+            pic.src=imgs[i];
+            (i==(imgs.length-1))?i=0:i++;
+            setTimeout(loop,2000);
+        }
+        document.addEventListener("DOMContentLoaded",change);
+    </script>
+</body>
+</html>

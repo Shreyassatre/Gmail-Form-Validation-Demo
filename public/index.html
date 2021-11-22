@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ragistration form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <center><img src="images/google.png"/></center>
+            <h2 class="text-center">Create   Google Account</h2>
+            <p class="text-center">Continue to Gmail</p>
+        </div>
+        <form id="form" class="form">
+            <div class="container" style="display: inline-flex;">
+                <div class="form_control mt-4" style="width: 50%">
+                    <input class="focus:border-blue-500 transition duration-2000" type="text" name="fname" id="fname" autocomplete="off" />
+                    <span class="text-1xl text-opacity-80 absolute left-0 top-4 mx-6 -py-0.8 -my-1.5 transition duration-2000 input-text">First Name</span>
+                    <i class="fas fa-check"></i>
+                    <div class="ex">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+                <div class="form_control" style="width: 50%; margin-left: 10px;">
+                    <label>Last name</label>
+                    <input type="text" name="lname" placeholder="Enter Last name" id="lname" autocomplete="off"/>
+                    <i class="fas fa-check"></i>
+                    <div class="ex">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+            </div>
+            <div class="username">
+                <div class="form_control">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter Username" id="username" autocomplete="off"/>
+                    <p>@gmail.com</p>
+                    <i class="fas fa-check"></i>
+                    <div class="ex">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="war"><p>You can use letters, numbers & periods<p></div>
+                    <small>Error message</small>
+                </div>
+            </div>
+            <div class="container" style="display: inline-flex">
+                <div class="form_control" style="width: 50%">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter Password" id="password"/>
+                    <i class="fas fa-check"></i>
+                    <div class="ex">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+                <div class="form_control" style="width: 50%; margin-left: 10px;">
+                    <label>Confirm Password</label>
+                    <input type="password" name="password2" placeholder="Enter Password Again" id="password2"/>
+                    <i class="fas fa-check"></i>
+                    <div class="ex">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+            </div>
+            <div class="container note">
+                <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
+            </div>
+            <center class="mt-4">
+                <a href="signin.html">Sign in instead</a>                  
+                <button type="submit" name="submit" class="btn btn-lg border rounded bg-primary text-light">Submit</button>
+            </center>
+        </form>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="form.js"></script>
+</body>
+</html>

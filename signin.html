@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ragistration form</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <center class="text-left text-lg-center text-md-center"><img src="images/google.png"/></center>
+            <h2 class="text-left text-lg-center text-md-center">Sign in</h2>
+            <p class="text-left text-lg-center text-md-center">Continue to Gmail</p>
+        </div>
+
+        <form id="form" class="form">
+            <div class="container">
+                <div class="form_control">
+                    <label>Email</label>
+                    <input type="text" placeholder="Enter Your email" id="email" autocomplete="off"/>
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-exclamation"></i>
+                    <div class="ex">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+            </div>
+            <div class="container">
+                <div class="form_control">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your Password" id="password"/>
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-exclamation"></i>
+                    <div class="ex">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+            </div>
+            <div class="mt-4 row d-flex justify-content-between mx-0 mx-lg-5 mx-md-4">
+                <a href="index.html">Create account</a>                  
+                <button type="submit" class="btn btn-lg border rounded bg-primary text-light">Sign-in</button>
+            </div>
+        </form>
+    </div>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript">
+            const form = document.getElementById('form');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+
+            
+            const user = [
+                ['satreshreyas','satreshreyas@gmail.com','satreshreyas'],
+                ['shreyassatre','shreyassatre@gmail.com','shreyassatre'],
+                ['shrutikasatre','shrutikasatre@gmail.com','shrutikasatre'],
+                ['shriram','shriram@gmail.com','shriram']
+            ];
+    
+
+            function sendData(sRate, count){
+                if(sRate === count){
+                    swal("welcome", "Authentication Successfull", "success");
+                    setTimeout(function(){ location.href = "gmail.html"; }, 4000);
+                }
+            }
+
+            function successMsg(){
+                let formCon = document.getElementsByClassName('form_control');
+                var count = formCon.length - 1;
+                for(var i=0 ; i<formCon.length; i++){
+                if(formCon[i].className === 'form_control success'){
+                var sRate = 0 + i;
+                sendData(sRate, count);
+                }else{
+                    return false;
+                }
+            }
+            }
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                checkInputs();
+            });
+
+            function checkInputs(){
+                const emailValue = email.value.trim();
+                const passwordValue = password.value.trim();
+
+                if(emailValue === '')
+                {
+                    setErrorFor(email, "Enter Gmail address");
+                }   
+                // else if(isUserEmail(emailValue))
+                // {
+                //     for(var i=0; i<user.length; i++){
+                //         if(emailValue === user[i][0])
+                //         {
+                //             setSuccessFor(email);
+                //             break;
+                //         }
+                //         else{
+                //             setErrorFor(email, "Couldn't find your Google Account");
+                //         }
+                //     }
+                // }
+                else if(!isEmail(emailValue))
+                {
+                    if(!isUserEmail(emailValue)){
+                        setErrorFor(email, "Email is not valid");
+                    }
+
+                    if(isUserEmail(emailValue))
+                    {
+                        for(var i=0; i<user.length; i++){
+                            if(emailValue === user[i][0])
+                            {
+                                setSuccessFor(email);
+                                break;
+                            }
+                            else{
+                                setErrorFor(email, "Couldn't find your Google Account");
+                            }
+                        }
+                    }
+                }
+                else{
+                    for(var i=0; i<user.length; i++){
+                        if(emailValue === user[i][1])
+                        {
+                            setSuccessFor(email);
+                            break;
+                        }
+                        else{
+                            setErrorFor(email, "Couldn't find your Google Account");
+                        }
+                    }
+                }
+
+                if(passwordValue === '')
+                {
+                    setErrorFor(password, "Enter Password");
+                }else{
+                    // if(emailValue === Object.keys(user)[0] && passwordValue === Object.values(user)[0]   || emailValue === Object.keys(user)[1] && passwordValue === Object.values(user)[1])
+                    // {
+                    //     setSuccessFor(password);
+                    // }
+                    // else{
+                    //     setErrorFor(password, "Wrong Password. Try agin");
+                    // }
+
+                    for(var i=0; i<user.length; i++){
+                        if(emailValue === user[i][0] && passwordValue === user[i][2] || emailValue === user[i][1] && passwordValue === user[i][2])
+                        {
+                            setSuccessFor(password);
+                            break;
+                        }
+                        else{
+                            setErrorFor(password, "Wrong Password. Try agin");
+                        }
+                    }
+                }
+                
+
+                successMsg();
+            }
+
+            function setErrorFor(input, message) {
+                const formControl = input.parentElement;
+                const small = formControl.querySelector('small');
+                formControl.className = 'form_control error';
+                small.innerText = message;
+            }
+
+            function setSuccessFor(input) {
+                const formControl = input.parentElement;
+                formControl.className = 'form_control success';
+            }
+
+            function isEmail(email){
+                return /^[A-Za-z_.0-9]{3,}@[gmail]{5}[.]{1}[com]{3}$/.test(email);
+            }
+
+            function isUserEmail(email){
+                return /^[\w@#$%^&*._]{6,30}$/.test(email);
+            }
+
+        </script>
+
+    
+</body>
